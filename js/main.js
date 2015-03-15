@@ -11,6 +11,7 @@ function preload() {
     game.load.spritesheet('kaboom', 'assets/games/invaders/explode.png', 128, 128);
     game.load.image('starfield', 'assets/games/carmandeer/road.png');
     game.load.image('background', 'assets/games/starstruck/background2.png');
+    game.load.audio('traffic', 'assets/games/carmandeer/traffic.mp3');
     
 
 }
@@ -31,12 +32,17 @@ var enemyBullet;
 var firingTimer = 0;
 var stateText;
 var livingEnemies = [];
+var music;
 
 function create() {
 
     game.physics.startSystem(Phaser.Physics.ARCADE);
 
     game.time.events.repeat(Phaser.Timer.SECOND * 1, 1000, createCar, this);
+
+    music = game.add.audio('traffic');
+
+    music.play();
 
     //  The scrolling starfield background
     starfield = game.add.tileSprite(0, 0, 800, 600, 'starfield');
