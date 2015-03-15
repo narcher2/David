@@ -354,6 +354,7 @@ function restart () {
     //  And brings the aliens back from the dead :)
     aliens.removeAll();
     createCar();
+    score = 0;
 
     //revives the player
     player.revive();
