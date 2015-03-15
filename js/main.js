@@ -107,7 +107,7 @@ function create() {
 }
 
 function createCar() {
-            var alien = aliens.create((game.rnd.integerInRange(7, 12)*64)+32, -64, 'invader');
+            var alien = aliens.create((game.rnd.integerInRange(7, 12)*64), -64, 'invader');
             alien.anchor.setTo(0.5, 0.5);
             alien.animations.add('fly', [ 0, 1, 2, 3 ], 20, true);
             alien.play('fly');
