@@ -7,7 +7,7 @@ function preload() {
     game.load.spritesheet('invader', 'assets/games/invaders/invader32x32x4.png', 32, 32);
     game.load.image('ship', 'assets/games/carmandeer/car1.png');
     game.load.spritesheet('kaboom', 'assets/games/invaders/explode.png', 128, 128);
-    game.load.image('road', 'assets/games/carmandeer/road.png');
+    game.load.image('starfield', 'assets/games/carmandeer/road.png');
     game.load.image('background', 'assets/games/starstruck/background2.png');
 
 }
@@ -34,7 +34,7 @@ function create() {
     game.physics.startSystem(Phaser.Physics.ARCADE);
 
     //  The scrolling starfield background
-    road = game.add.tileSprite(0, 0, 800, 600, 'road');
+    starfield = game.add.tileSprite(0, 0, 800, 600, 'road');
 
     //  Our bullet group
     bullets = game.add.group();
