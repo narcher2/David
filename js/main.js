@@ -12,6 +12,7 @@ function preload() {
     game.load.image('starfield', 'assets/games/carmandeer/road.png');
     game.load.image('background', 'assets/games/starstruck/background2.png');
     game.load.audio('traffic', 'assets/games/carmandeer/traffic.mp3');
+    game.load.audio('crash', 'assets/games/carmandeer/crash2.wav');
     
 
 }
@@ -33,6 +34,7 @@ var firingTimer = 0;
 var stateText;
 var livingEnemies = [];
 var music;
+var crash;
 
 function create() {
 
@@ -41,6 +43,7 @@ function create() {
     game.time.events.repeat(Phaser.Timer.SECOND * 1, 1000, createCar, this);
 
     music = game.add.audio('traffic');
+    crash = game.add.audio('crash');
 
     music.play();
 
@@ -265,7 +268,7 @@ function collisionHandler (bullet, alien) {
 }
 
 function enemyHitsPlayer (player,alien) {
-    
+    crash.play();
     alien.kill();
 
     live = lives.getFirstAlive();
