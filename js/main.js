@@ -245,9 +245,9 @@ function collisionHandler (bullet, alien) {
 
 }
 
-function enemyHitsPlayer (player,bullet) {
+function enemyHitsPlayer (player,alien) {
     
-    bullet.kill();
+    alien.kill();
 
     live = lives.getFirstAlive();
 
@@ -265,7 +265,7 @@ function enemyHitsPlayer (player,bullet) {
     if (lives.countLiving() < 1)
     {
         player.kill();
-        enemyBullets.callAll('kill');
+        aliens.callAll('kill');
 
         stateText.text=" GAME OVER \n Click to restart";
         stateText.visible = true;
