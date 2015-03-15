@@ -185,7 +185,7 @@ function descend() {
 function update() {
 
     //  Scroll the background
-    starfield.tilePosition.y += 2;
+    starfield.tilePosition.y += 4;
 
     if (player.alive)
     {
