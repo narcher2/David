@@ -108,7 +108,7 @@ function createCar() {
             alien.animations.add('fly', [ 0, 1, 2, 3 ], 20, true);
             alien.play('fly');
             alien.body.moves = true;
-            alien.body.velocity.y = -200;
+            alien.body.velocity.y = game.rnd.integerInRange(50, 200);
 
     aliens.x = 100;
     aliens.y = 50;
