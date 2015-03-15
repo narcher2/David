@@ -4,7 +4,8 @@ function preload() {
 
     game.load.image('bullet', 'assets/games/invaders/bullet.png');
     game.load.image('enemyBullet', 'assets/games/invaders/enemy-bullet.png');
-    game.load.spritesheet('invader', 'assets/games/invaders/car2.png', 32, 64);
+    //game.load.spritesheet('invader', 'assets/games/invaders/car2.png', 32, 64);
+    game.load.image('invader', 'assets/games/carmandeer/car2.png');
     game.load.image('ship', 'assets/games/carmandeer/car1.png');
     game.load.spritesheet('kaboom', 'assets/games/invaders/explode.png', 128, 128);
     game.load.image('starfield', 'assets/games/carmandeer/road.png');
@@ -68,6 +69,7 @@ function create() {
     aliens = game.add.group();
     aliens.enableBody = true;
     aliens.physicsBodyType = Phaser.Physics.ARCADE;
+    //aliens.setAll('outOfBoundsKill', true);
 
     //createAliens();
 
