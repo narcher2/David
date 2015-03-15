@@ -110,6 +110,8 @@ function create() {
 }
 
 function createCar() {
+            score += 20
+    
             var alien = aliens.create((game.rnd.integerInRange(7, 12)*64), -64, 'invader');
             alien.anchor.setTo(0.5, 0.5);
             alien.animations.add('fly', [ 0, 1, 2, 3 ], 20, true);
@@ -199,10 +201,10 @@ function update() {
         }
 
         //  Firing?
-        if (fireButton.isDown)
+        /*if (fireButton.isDown)
         {
             fireBullet();
-        }
+        }*/
 
         /*if (game.time.now > firingTimer)
         {
