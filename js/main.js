@@ -114,7 +114,7 @@ function createCar() {
             alien.body.moves = true;
             alien.body.velocity.y = game.rnd.integerInRange(50, 100);
             
-            var alien = aliens.create(game.rnd.integerInRange(0, 384), -64, 'cardown');
+            var alien = aliens.create((game.rnd.integerInRange(0, 6)*64), -64, 'cardown');
             alien.anchor.setTo(0.5, 0.5);
             alien.animations.add('fly', [ 0, 1, 2, 3 ], 20, true);
             alien.play('fly');
