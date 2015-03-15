@@ -70,7 +70,10 @@ function create() {
     aliens = game.add.group();
     aliens.enableBody = true;
     aliens.physicsBodyType = Phaser.Physics.ARCADE;
+    aliens.setAll('anchor.x', 0.5);
+    aliens.setAll('anchor.y', 1);
     aliens.setAll('outOfBoundsKill', true);
+    aliens.setAll('checkWorldBounds', true);
 
     //createAliens();
 
@@ -201,7 +204,7 @@ function update() {
 
         //  Run collision
         game.physics.arcade.overlap(bullets, aliens, collisionHandler, null, this);
-        game.physics.arcade.overlap(enemyBullets, player, enemyHitsPlayer, null, this);
+        game.physics.arcade.overlap(aliens, player, enemyHitsPlayer, null, this);
     }
 
 }
