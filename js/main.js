@@ -103,17 +103,11 @@ function create() {
 }
 
 function createCar() {
-    for (var y = 0; y < 4; y++)
-    {
-        for (var x = 0; x < 10; x++)
-        {
-            var alien = aliens.create(x * 48, y * 50, 'invader');
+            var alien = aliens.create(realInRange(0, 600), 0, 'invader');
             alien.anchor.setTo(0.5, 0.5);
             alien.animations.add('fly', [ 0, 1, 2, 3 ], 20, true);
             alien.play('fly');
             alien.body.moves = false;
-        }
-    }
 
     aliens.x = 100;
     aliens.y = 50;
