@@ -33,7 +33,7 @@ function create() {
 
     game.physics.startSystem(Phaser.Physics.ARCADE);
 
-    game.time.events.repeat(Phaser.Timer.SECOND * 2, 10, createAliens, this);
+    game.time.events.repeat(Phaser.Timer.SECOND * 2, 10, createCar, this);
 
     //  The scrolling starfield background
     starfield = game.add.tileSprite(0, 0, 800, 600, 'starfield');
