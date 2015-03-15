@@ -103,12 +103,19 @@ function create() {
 }
 
 function createCar() {
-            var alien = aliens.create(game.rnd.integerInRange(32, 600), 0, 'invader');
+            var alien = aliens.create(game.rnd.integerInRange(416, 800), -32, 'invader');
             alien.anchor.setTo(0.5, 0.5);
             alien.animations.add('fly', [ 0, 1, 2, 3 ], 20, true);
             alien.play('fly');
             alien.body.moves = true;
-            alien.body.velocity.y = game.rnd.integerInRange(50, 200);
+            alien.body.velocity.y = game.rnd.integerInRange(50, 100);
+            
+            var alien = aliens.create(game.rnd.integerInRange(0, 384), -32, 'invader');
+            alien.anchor.setTo(0.5, 0.5);
+            alien.animations.add('fly', [ 0, 1, 2, 3 ], 20, true);
+            alien.play('fly');
+            alien.body.moves = true;
+            alien.body.velocity.y = game.rnd.integerInRange(100, 300);
 
     aliens.x = 100;
     aliens.y = 50;
