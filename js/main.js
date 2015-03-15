@@ -36,7 +36,7 @@ function create() {
 
     game.physics.startSystem(Phaser.Physics.ARCADE);
 
-    game.time.events.repeat(Phaser.Timer.SECOND * 2, 10, createCar, this);
+    game.time.events.repeat(Phaser.Timer.SECOND * 2, 1000, createCar, this);
 
     //  The scrolling starfield background
     starfield = game.add.tileSprite(0, 0, 800, 600, 'starfield');
@@ -197,10 +197,10 @@ function update() {
             fireBullet();
         }
 
-        if (game.time.now > firingTimer)
+        /*if (game.time.now > firingTimer)
         {
             enemyFires();
-        }
+        }*/
 
         //  Run collision
         game.physics.arcade.overlap(bullets, aliens, collisionHandler, null, this);
@@ -343,7 +343,7 @@ function restart () {
     lives.callAll('revive');
     //  And brings the aliens back from the dead :)
     aliens.removeAll();
-    createAliens();
+    createCar();
 
     //revives the player
     player.revive();
