@@ -6,6 +6,7 @@ function preload() {
     game.load.image('enemyBullet', 'assets/games/invaders/enemy-bullet.png');
     //game.load.spritesheet('invader', 'assets/games/invaders/car2.png', 32, 64);
     game.load.image('invader', 'assets/games/carmandeer/car2.png');
+    game.load.image('cardown', 'assets/games/carmandeer/car3.png');
     game.load.image('ship', 'assets/games/carmandeer/car1.png');
     game.load.spritesheet('kaboom', 'assets/games/invaders/explode.png', 128, 128);
     game.load.image('starfield', 'assets/games/carmandeer/road.png');
@@ -113,7 +114,7 @@ function createCar() {
             alien.body.moves = true;
             alien.body.velocity.y = game.rnd.integerInRange(50, 100);
             
-            var alien = aliens.create(game.rnd.integerInRange(0, 384), -32, 'invader');
+            var alien = aliens.create(game.rnd.integerInRange(0, 384), -32, 'cardown');
             alien.anchor.setTo(0.5, 0.5);
             alien.animations.add('fly', [ 0, 1, 2, 3 ], 20, true);
             alien.play('fly');
