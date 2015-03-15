@@ -110,7 +110,7 @@ function create() {
 }
 
 function createCar() {
-            score += 20;
+            score += 10;
             scoreText.text = scoreString + score;
     
             var alien = aliens.create((game.rnd.integerInRange(6, 12)*64), -64, 'invader');
