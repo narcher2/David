@@ -1,2 +1,0 @@
-# David
-David vs. sheep
