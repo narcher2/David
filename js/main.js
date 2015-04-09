@@ -69,6 +69,7 @@ function create() {
     game.stage.backgroundColor = '#008000';
 
     sprite = game.add.sprite(400, 2900, 'player');
+    sprite.anchor.set(0.5);
 
     // game.physics.arcade.sortDirection = Phaser.Physics.Arcade.TOP_BOTTOM;
     game.physics.arcade.sortDirection = Phaser.Physics.Arcade.BOTTOM_TOP;
