@@ -47,8 +47,9 @@ function create() {
         c.anchor.setTo(0.5, 0.5);
         c.play('move');
         c.body.moves = true;
-        c.body.velocity.set(game.rnd.integerInRange(-50, 50), game.rnd.integerInRange(-50, 50));
-        game.physics.arcade.accelerationFromRotation(c.rotation, 200, c.body.acceleration);
+        //c.body.velocity.set(game.rnd.integerInRange(-50, 50), game.rnd.integerInRange(-50, 50));
+        c.rotation = game.rnd.integerInRange(0, 360);
+        //game.physics.arcade.accelerationFromRotation(c.rotation, 200, c.body.acceleration);
     }
 
     game.camera.follow(sprite);
