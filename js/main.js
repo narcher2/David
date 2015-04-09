@@ -16,7 +16,8 @@ indSheep = function (game, player) {
     this.animations.add('move', [0, 1, 2, 3, 4, 5], 20, true);
     this.play('move');
 };
-    
+
+/*
 indSheep.prototype.update = function() {
     if (game.time.now > this.turnTimer && game.time.now > 500)
     {
@@ -25,7 +26,7 @@ indSheep.prototype.update = function() {
         game.physics.arcade.velocityFromRotation(this.lamb.rotation, game.rnd.integerInRange(0, 50), this.lamb.body.velocity);
 
     }
-};
+};*/
 
 var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: preload, create: create, update: update });
 
