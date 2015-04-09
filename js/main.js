@@ -169,10 +169,10 @@ function update() {
         sprite.body.rotation = rotSum/buttonCount;
         game.physics.arcade.velocityFromRotation(sprite.rotation, 200, sprite.body.velocity);
     }
-    /*(fireButton.isDown)
+    if(isDown(Phaser.Keyboard.SPACEBAR))
     {
             sprite.play('sling');
-    }*/
+    }
     
     if (game.time.now > turnTimer && game.time.now > 500)
     {
