@@ -143,7 +143,7 @@ function create() {
     baa = game.add.audio('baa');
     ding = game.add.audio('ding');
     bark = game.add.audio('bark');
-    throw = game.add.audio('bark');
+    throw = game.add.audio('throw');
     
     bullets = game.add.group();
     bullets.enableBody = true;
