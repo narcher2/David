@@ -1,8 +1,8 @@
 indSheep = function (game, player) {  
-    /*var x = game.world.randomX;
+    var x = game.world.randomX;
     var y = game.world.randomY;
 
-    this.turnTimer = 0; */
+    this.turnTimer = 0;
     this.game = game; 
     this.player = player;
     /*
