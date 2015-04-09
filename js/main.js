@@ -131,20 +131,27 @@ function update() {
     
     if (cursors.left.isDown)
     {
-        sprite.body.velocity.x = -200;
+        sprite.body.rotation = 180;
+        game.physics.arcade.velocityFromRotation(sprite.rotation, 200, sprite.body.velocity);
     }
     else if (cursors.right.isDown)
     {
-        sprite.body.velocity.x = 200;
+        //sprite.body.velocity.x = 200;
+        sprite.body.rotation = 0;
+        game.physics.arcade.velocityFromRotation(sprite.rotation, 200, sprite.body.velocity);
     }
 
     if (cursors.up.isDown)
     {
-        sprite.body.velocity.y = -200;
+        //sprite.body.velocity.y = -200;
+        sprite.body.rotation = 90;
+        game.physics.arcade.velocityFromRotation(sprite.rotation, 200, sprite.body.velocity);
     }
     else if (cursors.down.isDown)
     {
-        sprite.body.velocity.y = 200;
+        //sprite.body.velocity.y = 200;
+        sprite.body.rotation = 270;
+        game.physics.arcade.velocityFromRotation(sprite.rotation, 200, sprite.body.velocity);
     }
     
     if (game.time.now > turnTimer && game.time.now > 500)
