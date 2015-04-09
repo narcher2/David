@@ -39,7 +39,7 @@ indSheep.prototype.update = function() {
     }
     if (this.game.physics.arcade.distanceBetween(this.lamb, this.player) < 150)
     {
-        this.lamb.rotation = this.game.physics.arcade.moveToObject(this.lamb, this.player, -100)
+        this.lamb.rotation = this.game.physics.arcade.moveToObject(this.lamb, this.player, -100)+180
     }
 };
 
