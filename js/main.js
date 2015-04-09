@@ -220,7 +220,7 @@ function fire() {
     if (game.time.now > nextFire && bullets.countDead() > 0)
     {
         nextFire = game.time.now + fireRate;
-        //slinger.play();
+        slinger.play();
         var bullet = bullets.getFirstDead();
 
         bullet.reset(sprite.x - 8, sprite.y - 8);
@@ -333,14 +333,14 @@ function collisionHandler (bullet, wolf) {
 
 function sheepHitsFence (lamb, fence) {
 
-        lamb.kill();
+        fence.kill();
         ding.play();
 
 }
 
 function wolfEatsSheep (lamb, wolf) {
 
-        lamb.kill();
+        wolf.kill();
         baa.play();
 
 }
