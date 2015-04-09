@@ -79,7 +79,9 @@ function update() {
     sprite.body.velocity.y = 0;
     
     //moveSheep(c);
-
+    
+    game.physics.arcade.accelerationFromRotation(group.rotation, 200, group.body.acceleration);
+    
     if (cursors.left.isDown)
     {
         sprite.body.velocity.x = -200;
