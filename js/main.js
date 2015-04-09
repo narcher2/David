@@ -50,7 +50,6 @@ indSheep = function (game, player) {
     this.turnTimer = 0;
     this.game = game; 
     this.player = player;
-    
     this.sheepStatus = 0;
     this.lamb = game.add.sprite(x, y, 'sheep');
     game.physics.enable(this.lamb, Phaser.Physics.ARCADE);
@@ -63,6 +62,7 @@ indSheep = function (game, player) {
     //this.animations.add('move', [0, 1, 2, 3, 4, 5], 20, true);
     this.lamb.animations.add('move', [0, 1, 2, 3, 4, 5], 20, true);
     this.lamb.play('move');
+    
 };
 
 
@@ -98,6 +98,7 @@ function preload() {
     game.load.spritesheet('player', 'assets/sprites/david_strip9.png', 64, 64)
     game.load.spritesheet('wolf', 'assets/sprites/wolf_strip4.png', 64, 64)
     game.load.image('background', 'assets/sprites/grassbackground.png');
+    game.load.audio('sheepSong', ['assets/audio/sheeptheme.mp3']);
 
 }
 
@@ -116,6 +117,10 @@ function create() {
 
     game.stage.backgroundColor = '#008000';
     background = game.add.tileSprite(0, 0, 3000, 3000, 'background');
+    
+    music = game.add.audio('sheepSong');
+
+    music.play();
 
     sprite = game.add.sprite(500, 1000, 'player');
     sprite.anchor.set(0.5);
