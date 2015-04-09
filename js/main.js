@@ -102,8 +102,8 @@ function update() {
     {
         turnTimer = game.time.now + 2000;
         //c.body.velocity.set(game.rnd.integerInRange(-50, 50), game.rnd.integerInRange(-50, 50));
-        this.group.body.velocity.x = 0;
-        this.group.body.velocity.y = 0;
+        //group.body.velocity.x = 0;
+        //group.body.velocity.y = 0;
     }
 
 }
