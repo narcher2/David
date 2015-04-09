@@ -251,6 +251,10 @@ function update() {
     {
             sheepSet[i].update();
     }
+        for (var i = 0; i < wolfSet.length; i++)
+    {
+            wolfSet[i].update();
+    }
 
 }
 
