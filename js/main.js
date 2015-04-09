@@ -300,11 +300,17 @@ function update() {
     for (var i = 0; i < sheepSet.length; i++)
     {
             sheepSet[i].update();
+            game.physics.arcade.overlap(fence, sheepSet[i].lamb, sheepHitsFence, null, this);
+            
     }
         for (var i = 0; i < wolfSet.length; i++)
     {
+        for(var j = 0; j < sheepSet.length; j++)
+        {
             wolfSet[i].update();
             game.physics.arcade.overlap(bullets, wolfSet[i].wolf, collisionHandler, null, this);
+            game.physics.arcade.overlap(wolfSet[i].wolf, sheepSet[i].lamb, wolfEatsSheep, null, this);
+        }
     }
         //game.physics.arcade.collide(bullets, wolf, collisionHandler, null, this);
         //game.physics.arcade.collide(lamb, fence, sheepHitsFence, null, this);
@@ -317,21 +323,21 @@ function collisionHandler (bullet, wolf) {
 
         wolf.kill();
         bullet.kill();
-        //bark.play();
+        bark.play();
 
 }
-/*
+
 function sheepHitsFence (lamb, fence) {
 
         lamb.kill();
-        //ding.play();
+        ding.play();
 
 }
 
 function wolfEatsSheep (lamb, wolf) {
 
         lamb.kill();
-        //baa.play();
+        baa.play();
 
-}*/
+}
 
