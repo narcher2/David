@@ -54,7 +54,7 @@ function create() {
 
 }
 
-function moveSheep()
+function moveSheep(c)
     {   
         /*var f = 0;
         f = game.rnd.integerInRange(0,20);
@@ -76,7 +76,7 @@ function update() {
     sprite.body.velocity.x = 0;
     sprite.body.velocity.y = 0;
     
-    moveSheep();
+    moveSheep(c);
 
     if (cursors.left.isDown)
     {
