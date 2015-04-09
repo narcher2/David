@@ -57,12 +57,12 @@ function create() {
 function moveSheep()
     {
         q = game.rnd.integerInRange(0,60);
-        if (q === 1)
+        if (q == 1)
         {
         c.body.velocity.set(game.rnd.integerInRange(-50, 50), game.rnd.integerInRange(-50, 50));
         }
         q = game.rnd.integerInRange(0,60);
-        if (q === 1)
+        if (q == 1)
         {
         c.body.velocity.set(0, 0);
         }
