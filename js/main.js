@@ -53,13 +53,13 @@ function moveSheep()
     {
         if (game.rnd.integerInRange(0,60) == 1)
         {
-        c.body.velocity.x = game.rnd.integerInRange(0,50)-25;
-        c.body.velocity.y = game.rnd.integerInRange(0,50)-25;
+        group.body.velocity.x = game.rnd.integerInRange(0,50)-25;
+        group.body.velocity.y = game.rnd.integerInRange(0,50)-25;
         }
         if (game.rnd.integerInRange(0, 60) == 1)
         {
-        c.body.velocity.x = 0;
-        c.body.velocity.y = 0;
+        group.body.velocity.x = 0;
+        group.body.velocity.y = 0;
         }
     }
 
