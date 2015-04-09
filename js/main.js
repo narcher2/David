@@ -287,10 +287,10 @@ function update() {
         sprite.body.rotation = rotSum/buttonCount;
         game.physics.arcade.velocityFromRotation(sprite.rotation, 200, sprite.body.velocity);
     }
-    if(fireButton.isDown)
+    /*if(fireButton.isDown)
     {
         sprite.play('sling');
-    }
+    }*/
     
     if (game.input.activePointer.isDown)
     {
