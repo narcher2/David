@@ -24,9 +24,17 @@ indSheep = function (game, player) {
 indSheep.prototype.update = function() {
     if (game.time.now > this.turnTimer && game.time.now > 500)
     {
-        this.turnTimer = game.time.now + 500;
+        this.turnTimer = game.time.now + 3000;
+        if (game.rnd.integerInRange(0, 4) > 3)
+        {
         this.lamb.angle = game.rnd.integerInRange(0, 360);
         game.physics.arcade.velocityFromRotation(this.lamb.rotation, game.rnd.integerInRange(0, 50), this.lamb.body.velocity);
+        }
+        else
+        {
+        this.lamb.body.velocity.x = 0;
+        this.lamb.body.velocity.y = 0;
+        }
 
     }
 };
