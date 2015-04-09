@@ -14,8 +14,8 @@ indSheep = function (game, player) {
     this.lamb.body.collideWorldBounds = true;
     this.lamb.body.bounce.setTo(1, 1);
     game.physics.arcade.velocityFromRotation(this.lamb.rotation, 50, this.lamb.body.velocity);
-    //this.animations.add('move', [0, 1, 2, 3, 4, 5], 20, true);
-    //this.play('move');
+    this.animations.add('move', [0, 1, 2, 3, 4, 5], 20, true);
+    this.play('move');
 };
 
 /*
