@@ -45,6 +45,7 @@ function create() {
         //alien.animations.add('fly', [ 0, 1, 2, 3 ], 20, true);
         c.animations.add('move', [0, 1, 2, 3, 4, 5], 20, true);
         c.play('move');
+        c.body.moves = true;
         c.body.velocity.set(game.rnd.integerInRange(-50, 50), game.rnd.integerInRange(-50, 50));
     }
 
