@@ -60,7 +60,7 @@ function moveSheep(sheep)
         f = game.rnd.integerInRange(0,20);
         if (f === 1)
         {*/
-        sheep.body.velocity.set(game.rnd.integerInRange(-50, 50), game.rnd.integerInRange(-50, 50));
+        //sheep.body.velocity.set(game.rnd.integerInRange(-50, 50), game.rnd.integerInRange(-50, 50));
         /*}
         f = game.rnd.integerInRange(0,20);
         if (f === 1)
@@ -76,7 +76,7 @@ function update() {
     sprite.body.velocity.x = 0;
     sprite.body.velocity.y = 0;
     
-    moveSheep(group);
+    //moveSheep(group);
 
     if (cursors.left.isDown)
     {
