@@ -316,7 +316,7 @@ function update() {
         //game.physics.arcade.overlap(lamb, fence, sheepHitsFence, null, this);
         //game.physics.arcade.overlap(lamb, wolf, wolfEatsSheep, null, this);
 }
-
+/*
 function collisionHandler (bullets, wolf) {
 
         wolf.kill();
@@ -340,4 +340,4 @@ function wolfEatsSheep (lamb, wolf) {
     }
 
 }
-
+*/
