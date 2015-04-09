@@ -162,7 +162,7 @@ function update() {
 
         if (cursors.right.isDown)
         {
-        rotSum += 180;
+        rotSum += 360;
         }
         else
         {
