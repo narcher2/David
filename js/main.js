@@ -37,6 +37,10 @@ indSheep.prototype.update = function() {
         }
 
     }
+    if (this.game.physics.arcade.distanceBetween(this.lamb, this.player) < 150)
+    {
+        this.rotation = this.game.physics.arcade.moveToObject(this, this.player, -100)
+    }
 };
 
 var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: preload, create: create, update: update });
