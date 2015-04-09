@@ -171,7 +171,7 @@ function update() {
     }
     if(fireButton.isDown)
     {
-            sprite.play('sling');
+        //sprite.play('sling');
     }
     
     if (game.time.now > turnTimer && game.time.now > 500)
