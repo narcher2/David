@@ -1,4 +1,4 @@
-indWolf = function (game, player) {  
+/*indWolf = function (game, player) {  
     var x = game.world.randomX;
     var y = game.world.randomY;
 
@@ -42,7 +42,7 @@ indSheep.prototype.update = function() {
         this.wolf.rotation = this.game.physics.arcade.moveToObject(this.wolf, this.player, 125)
         this.wolf.play('move');
     }
-};
+};*/
 
 indSheep = function (game, player) {  
     var x = game.world.randomX;
