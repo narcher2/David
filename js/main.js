@@ -83,7 +83,6 @@ function create() {
     for (var i = 0; i < 20; i++)
     {
         sheepSet.push(new indSheep(game, sprite));
-    }
         //  Here we'll create some chillis which the player can pick-up. They are still part of the same Group.
         //var c = sheeples.create(game.rnd.integerInRange(64, 800-64), game.rnd.integerInRange(0, 2900), 'sheep', 1);
         //c.body.immovable = false;
