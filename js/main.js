@@ -36,7 +36,7 @@ indWolf.prototype.update = function() {
         }
 
     }
-    if (this.game.physics.arcade.distanceBetween(this.wolf, this.player) < 150)
+    if (this.game.physics.arcade.distanceBetween(this.wolf, this.player) < 300)
     {
         this.wolf.rotation = this.game.physics.arcade.moveToObject(this.wolf, this.player, 125)
         this.wolf.play('move');
@@ -146,7 +146,7 @@ function create() {
     
     wolfSet = [];
     
-    for(var hue = 0; hue < 5; hue++)
+    for(var hue = 0; hue < 20; hue++)
     {
     wolfSet.push(new indWolf(game, sprite));
     }
