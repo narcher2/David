@@ -68,7 +68,7 @@ function create() {
     game.physics.startSystem(Phaser.Physics.ARCADE);
 
     game.stage.backgroundColor = '#008000';
-    background = game.add.tilesSprite(0, 0, 2000, 2000, 'background');
+    background = game.add.tileSprite(0, 0, 2000, 2000, 'background');
 
     sprite = game.add.sprite(500, 1000, 'player');
     sprite.anchor.set(0.5);
