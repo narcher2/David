@@ -111,7 +111,7 @@ function update() {
     {
         turnTimer = game.time.now + 500;
         sheeples.rotation = game.rnd.integerInRange(0, 360);
-        game.physics.arcade.velocityFromRotation(sheeples.rotation, game.rnd.integerInRange(0, 50), sheeples.body.velocity);
+        //game.physics.arcade.velocityFromRotation(sheeples.rotation, game.rnd.integerInRange(0, 50), sheeples.body.velocity);
         //group.body.velocity.x = 0;
         //group.body.velocity.y = 0;
     }
