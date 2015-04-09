@@ -37,9 +37,9 @@ indSheep.prototype.update = function() {
         }
 
     }
-    if (this.game.physics.arcade.distanceBetween(this.wolf, lamb) < 150)
+    if (this.game.physics.arcade.distanceBetween(this.wolf, this.player) < 150)
     {
-        this.wolf.rotation = this.game.physics.arcade.moveToObject(this.wolf, lamb, 125)
+        this.wolf.rotation = this.game.physics.arcade.moveToObject(this.wolf, this.player, 125)
         this.wolf.play('move');
     }
 };
@@ -86,10 +86,6 @@ indSheep.prototype.update = function() {
     if (this.game.physics.arcade.distanceBetween(this.lamb, this.player) < 150)
     {
         this.lamb.rotation = this.game.physics.arcade.moveToObject(this.lamb, this.player, -100)+135
-    }
-    if (this.game.physics.arcade.distanceBetween(this.lamb, wolf) < 150)
-    {
-        this.lamb.rotation = this.game.physics.arcade.moveToObject(this.lamb, wolf, -100)+135
     }
 };
 
