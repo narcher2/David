@@ -101,11 +101,7 @@ function update() {
     {
         turnTimer = game.time.now + 500;
         //sheeples.rotation = game.rnd.integerInRange(0, 360);
-        game.world.forEach(function(sheeples) {
-        
-        sheeples.rotation = game.rnd.integerInRange(0, 360);
-        
-        });
+
     }
 
 }
