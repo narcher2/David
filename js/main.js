@@ -304,7 +304,7 @@ function update() {
         for (var i = 0; i < wolfSet.length; i++)
     {
             wolfSet[i].update();
-            game.physics.arcade.overlap(bullets, wolfSet[i].tank, collisionHandler, null, this);
+            game.physics.arcade.overlap(bullets, wolfSet[i].wolf, collisionHandler, null, this);
     }
         //game.physics.arcade.collide(bullets, wolf, collisionHandler, null, this);
         //game.physics.arcade.collide(lamb, fence, sheepHitsFence, null, this);
