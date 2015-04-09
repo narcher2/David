@@ -5,7 +5,7 @@ function preload() {
 
     game.load.image('phaser', 'assets/sprites/phaser-dude.png');
     game.load.spritesheet('veggies', 'assets/sprites/fruitnveg32wh37.png', 32, 32);
-    game.load.spritesheet('sheep', 'assets/sprites/sheep.png', 64, 64);
+    game.load.spritesheet('sheep', 'assets/sprites/sheep.png', 32, 32);
 
 }
 
