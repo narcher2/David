@@ -44,6 +44,7 @@ function create() {
         var c = group.create(game.rnd.integerInRange(64, 800-64), game.rnd.integerInRange(0, 2900), 'sheep', 1);
         //c.body.immovable = false;
         c.animations.add('move', [0, 1, 2, 3, 4, 5], 20, true);
+        c.anchor.setTo(0.5, 0.5);
         c.play('move');
         c.body.moves = true;
         c.body.velocity.set(game.rnd.integerInRange(-50, 50), game.rnd.integerInRange(-50, 50));
@@ -101,8 +102,8 @@ function update() {
     {
         turnTimer = game.time.now + 2000;
         //c.body.velocity.set(game.rnd.integerInRange(-50, 50), game.rnd.integerInRange(-50, 50));
-        group.body.velocity.x = 0;
-        group.body.velocity.y = 0;
+        this.group.body.velocity.x = 0;
+        this.group.body.velocity.y = 0;
     }
 
 }
