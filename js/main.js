@@ -2,7 +2,7 @@ indSheep = function (game, player) {
     var x = game.world.randomX;
     var y = game.world.randomY;
 
-    this.lamb.turnTimer = 0;
+    this.turnTimer = 0;
     this.game = game;  
     this.player = player;
     this.sheepStatus = 0;
@@ -20,7 +20,7 @@ indSheep = function (game, player) {
 indSheep.prototype.update = function() {
     if (game.time.now > this.lamb.turnTimer && game.time.now > 500)
     {
-        this.lamb.turnTimer = game.time.now + 500;
+        this.turnTimer = game.time.now + 500;
         this.lamb.angle = game.rnd.integerInRange(0, 360);
         game.physics.arcade.velocityFromRotation(this.lamb.rotation, game.rnd.integerInRange(0, 50), this.lamb.body.velocity);
 
