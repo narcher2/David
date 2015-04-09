@@ -312,9 +312,9 @@ function update() {
     {
             wolfSet[i].update();
     }
-        game.physics.arcade.overlap(bullets, wolf, collisionHandler, null, this);
-        game.physics.arcade.overlap(lamb, fence, sheepHitsFence, null, this);
-        game.physics.arcade.overlap(lamb, wolf, wolfEatsSheep, null, this);
+        //game.physics.arcade.overlap(bullets, wolf, collisionHandler, null, this);
+        //game.physics.arcade.overlap(lamb, fence, sheepHitsFence, null, this);
+        //game.physics.arcade.overlap(lamb, wolf, wolfEatsSheep, null, this);
 }
 
 function collisionHandler (bullets, wolf) {
