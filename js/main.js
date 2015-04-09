@@ -148,7 +148,7 @@ function create() {
     
     for(var hue = 0; hue < 5; hue++)
     {
-    sheepSet.push(new indSheep(game, sprite));
+    wolfSet.push(new indWolf(game, sprite));
     }
     
     sheepSet = [];
