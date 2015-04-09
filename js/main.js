@@ -70,6 +70,7 @@ function create() {
 
     sprite = game.add.sprite(400, 2900, 'player');
     sprite.anchor.set(0.5);
+    sprite.animations.add('sling', [0, 1, 2, 3, 4, 5, 6, 7, 8], 20, true);
 
     // game.physics.arcade.sortDirection = Phaser.Physics.Arcade.TOP_BOTTOM;
     game.physics.arcade.sortDirection = Phaser.Physics.Arcade.BOTTOM_TOP;
@@ -167,6 +168,10 @@ function update() {
         //game.physics.arcade.velocityFromRotation(sprite.rotation, 200, sprite.body.velocity);
         sprite.body.rotation = rotSum/buttonCount;
         game.physics.arcade.velocityFromRotation(sprite.rotation, 200, sprite.body.velocity);
+    }
+    if (fireButton.isDown)
+    {
+            sprite.play('sling');
     }
     
     if (game.time.now > turnTimer && game.time.now > 500)
