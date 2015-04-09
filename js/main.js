@@ -33,6 +33,7 @@ function create() {
     sheeples = game.add.group();
     sheeples.enableBody = true;
     sheeples.physicsBodyType = Phaser.Physics.ARCADE;
+    game.physics.arcade.enable(sheeples); //maybe?
     sheeples.setAll('anchor.x', 0.5);
     sheeples.setAll('anchor.y', 1);
     sheeples.setAll('outOfBoundsKill', true);
