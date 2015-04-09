@@ -38,6 +38,15 @@ function create() {
     sheeples.setAll('anchor.y', 1);
     sheeples.setAll('outOfBoundsKill', true);
     sheeples.setAll('checkWorldBounds', true);
+    
+    sheepSet = [];
+
+    sheepTotal = 50;
+
+    for (var u = 0; u < sheepTotal; u++)
+    {
+        sheepSet.push(new indSheep(game, sprite));
+    }
 
     /*for (var i = 0; i < 500; i++)
     {
@@ -49,14 +58,14 @@ function create() {
     for (var i = 0; i < 20; i++)
     {
         //  Here we'll create some chillis which the player can pick-up. They are still part of the same Group.
-        var c = sheeples.create(game.rnd.integerInRange(64, 800-64), game.rnd.integerInRange(0, 2900), 'sheep', 1);
+        //var c = sheeples.create(game.rnd.integerInRange(64, 800-64), game.rnd.integerInRange(0, 2900), 'sheep', 1);
         //c.body.immovable = false;
-        c.animations.add('move', [0, 1, 2, 3, 4, 5], 20, true);
-        c.play('move');
-        c.body.moves = true;
+        //c.animations.add('move', [0, 1, 2, 3, 4, 5], 20, true);
+        //c.play('move');
+        //c.body.moves = true;
         //c.body.velocity.set(game.rnd.integerInRange(-50, 50), game.rnd.integerInRange(-50, 50));
-        c.rotation = game.rnd.integerInRange(0, 360);
-        game.physics.arcade.velocityFromRotation(c.rotation, game.rnd.integerInRange(0, 50), c.body.velocity);
+        //c.rotation = game.rnd.integerInRange(0, 360);
+        //game.physics.arcade.velocityFromRotation(c.rotation, game.rnd.integerInRange(0, 50), c.body.velocity);
     }
 
     game.camera.follow(sprite);
@@ -70,7 +79,7 @@ function moveSheep()
     self.rotation = game.rnd.integerInRange(0, 360);
     }
     
-indSheep = function (game, player, sheepStatus) {  
+indSheep = function (game, player) {  
     var x = game.world.randomX;
     var y = game.world.randomY;
 
@@ -85,6 +94,8 @@ indSheep = function (game, player, sheepStatus) {
     this.lamb.body.collideWorldBounds = true;
     this.lamb.body.bounce.setTo(1, 1);
     game.physics.arcade.velocityFromRotation(this.lamb.rotation, 50, this.lamb.body.velocity);
+    this.animations.add('move', [0, 1, 2, 3, 4, 5], 20, true);
+    this.play('move');
 };
     
 indSheep.prototype.update = function() {
