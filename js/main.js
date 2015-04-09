@@ -226,19 +226,12 @@ function fire() {
 
 }
 
-function moveSheep()
-    {   
-    self.rotation = game.rnd.integerInRange(0, 360);
-    }
-
 function update() {
 
-    //game.physics.arcade.collide(sprite, group, collisionHandler, null, this);
 
     sprite.body.velocity.x = 0;
     sprite.body.velocity.y = 0;
     
-    //moveSheep(c);
     var rotSum = 0;
     var buttonCount = 0;
     
@@ -315,6 +308,7 @@ function update() {
         //game.physics.arcade.overlap(bullets, wolf, collisionHandler, null, this);
         //game.physics.arcade.overlap(lamb, fence, sheepHitsFence, null, this);
         //game.physics.arcade.overlap(lamb, wolf, wolfEatsSheep, null, this);
+        //game.physics.arcade.collide(sprite, group, collisionHandler, null, this);
 }
 /*
 function collisionHandler (bullets, wolf) {
