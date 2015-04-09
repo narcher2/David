@@ -110,7 +110,7 @@ function update() {
     if (game.time.now > turnTimer && game.time.now > 500)
     {
         turnTimer = game.time.now + 2000;
-        sheeples.rotation = game.rnd.integerInRange(0, 360);
+        //sheeples.rotation = game.rnd.integerInRange(0, 360);
         //game.physics.arcade.velocityFromRotation(sheeple.rotation, game.rnd.integerInRange(0, 50), sheeple.body.velocity);
         //group.body.velocity.x = 0;
         //group.body.velocity.y = 0;
