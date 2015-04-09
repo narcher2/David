@@ -48,6 +48,7 @@ function create() {
         c.play('move');
         c.body.moves = true;
         c.body.velocity.set(game.rnd.integerInRange(-50, 50), game.rnd.integerInRange(-50, 50));
+        game.physics.arcade.accelerationFromRotation(c.rotation, 200, c.body.acceleration);
     }
 
     game.camera.follow(sprite);
@@ -79,8 +80,6 @@ function update() {
     sprite.body.velocity.y = 0;
     
     //moveSheep(c);
-    
-    game.physics.arcade.accelerationFromRotation(group.rotation, 200, group.body.acceleration);
     
     if (cursors.left.isDown)
     {
