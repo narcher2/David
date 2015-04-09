@@ -5,7 +5,7 @@ function preload() {
 
     game.load.image('phaser', 'assets/sprites/phaser-dude.png');
     game.load.spritesheet('veggies', 'assets/sprites/fruitnveg32wh37.png', 32, 32);
-    game.load.spritesheet('sheep', 'assets/sprites/sheep.png', 32, 32);
+    game.load.spritesheet('sheep', 'assets/sprites/sheep.png', 64, 64);
 
 }
 
@@ -39,7 +39,7 @@ function create() {
     for (var i = 0; i < 20; i++)
     {
         //  Here we'll create some chillis which the player can pick-up. They are still part of the same Group.
-        var c = group.create(game.rnd.integerInRange(64, 800-64), game.rnd.integerInRange(0, 2000), 'sheep', 3);
+        var c = group.create(game.rnd.integerInRange(64, 800-64), game.rnd.integerInRange(0, 2900), 'sheep', 3);
         c.body.immovable = true;
     }
 
