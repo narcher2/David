@@ -112,6 +112,8 @@ function create() {
     }
 
     game.camera.follow(sprite);
+    
+    fireButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 
     cursors = game.input.keyboard.createCursorKeys();
 
@@ -171,7 +173,7 @@ function update() {
     }
     if(fireButton.isDown)
     {
-        //sprite.play('sling');
+        sprite.play('sling');
     }
     
     if (game.time.now > turnTimer && game.time.now > 500)
