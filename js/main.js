@@ -49,7 +49,7 @@ function create() {
         c.body.moves = true;
         //c.body.velocity.set(game.rnd.integerInRange(-50, 50), game.rnd.integerInRange(-50, 50));
         c.rotation = game.rnd.integerInRange(0, 360);
-        //game.physics.arcade.accelerationFromRotation(c.rotation, 200, c.body.acceleration);
+        game.physics.arcade.velocityFromRotation(c.rotation, game.rnd.integerInRange(0, 50), c.body.velocity);
     }
 
     game.camera.follow(sprite);
