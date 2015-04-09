@@ -51,6 +51,7 @@ function preload() {
     game.load.spritesheet('veggies', 'assets/sprites/fruitnveg32wh37.png', 32, 32);
     game.load.spritesheet('sheep', 'examples/assets/sprites/sheep.png', 64, 64);
     game.load.spritesheet('player', 'assets/sprites/david_strip9.png', 64, 64)
+    game.load.image('background', 'assets/sprites/grassbackground.png');
 
 }
 
@@ -67,6 +68,7 @@ function create() {
     game.physics.startSystem(Phaser.Physics.ARCADE);
 
     game.stage.backgroundColor = '#008000';
+    background = game.add.tilesSprite(0, 0, 2000, 2000);
 
     sprite = game.add.sprite(500, 1000, 'player');
     sprite.anchor.set(0.5);
