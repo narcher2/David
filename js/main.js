@@ -54,13 +54,13 @@ function create() {
 
 }
 
-function moveSheep(c)
+function moveSheep(sheep)
     {   
         /*var f = 0;
         f = game.rnd.integerInRange(0,20);
         if (f === 1)
         {*/
-        c.body.velocity.set(game.rnd.integerInRange(-50, 50), game.rnd.integerInRange(-50, 50));
+        sheep.body.velocity.set(game.rnd.integerInRange(-50, 50), game.rnd.integerInRange(-50, 50));
         /*}
         f = game.rnd.integerInRange(0,20);
         if (f === 1)
