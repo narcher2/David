@@ -72,7 +72,7 @@ function update() {
     sprite.body.velocity.x = 0;
     sprite.body.velocity.y = 0;
     
-    moveSheep();
+    //moveSheep();
 
     if (cursors.left.isDown)
     {
