@@ -220,7 +220,7 @@ function fire() {
     if (game.time.now > nextFire && bullets.countDead() > 0)
     {
         nextFire = game.time.now + fireRate;
-        throw.play();
+        //throw.play();
         var bullet = bullets.getFirstDead();
 
         bullet.reset(sprite.x - 8, sprite.y - 8);
