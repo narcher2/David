@@ -61,7 +61,8 @@ function moveSheep()
         {
         c.body.velocity.set(game.rnd.integerInRange(-50, 50), game.rnd.integerInRange(-50, 50));
         }
-        if (game.rnd.integerInRange(0,60) === 1)
+        q = game.rnd.integerInRange(0,60);
+        if (q === 1)
         {
         c.body.velocity.set(0, 0);
         }
