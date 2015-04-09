@@ -69,6 +69,33 @@ function moveSheep()
     {   
     self.rotation = game.rnd.integerInRange(0, 360);
     }
+    
+indSheep = function (game, player, sheepStatus) {  
+    var x = game.world.randomX;
+    var y = game.world.randomY;
+
+    this.lamb.turnTimer = 0;
+    this.game = game;  
+    this.player = player;
+    this.sheepStatus = 0;
+    this.lamb = game.add.sprite(x, y, 'enemy', 'sheep');
+    game.physics.enable(this.lamb, Phaser.Physics.ARCADE);
+    this.lamb.body.immovable = false;
+    this.lamb.angle = game.rnd.angle();
+    this.lamb.body.collideWorldBounds = true;
+    this.lamb.body.bounce.setTo(1, 1);
+    game.physics.arcade.velocityFromRotation(this.lamb.rotation, 50, this.lamb.body.velocity);
+};
+    
+indSheep.prototype.update = function() {
+    if (game.time.now > this.lamb.turnTimer && game.time.now > 500)
+    {
+        this.lamb.turnTimer = game.time.now + 500;
+        this.lamb.angle = game.rnd.integerInRange(0, 360);
+        game.physics.arcade.velocityFromRotation(this.lamb.rotation, game.rnd.integerInRange(0, 50), this.lamb.body.velocity);
+
+    }
+};
 
 function update() {
 
