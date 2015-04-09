@@ -18,7 +18,7 @@ indSheep = function (game, player) {
 };
     
 indSheep.prototype.update = function() {
-    if (game.time.now > this.lamb.turnTimer && game.time.now > 500)
+    if (game.time.now > this.turnTimer && game.time.now > 500)
     {
         this.turnTimer = game.time.now + 500;
         this.lamb.angle = game.rnd.integerInRange(0, 360);
