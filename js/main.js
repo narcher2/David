@@ -107,6 +107,7 @@ var cursors;
 var q;
 var turnTimer = 0;
 var sheepSet;
+var wolfSet;
 
 function create() {
 
@@ -142,6 +143,13 @@ function create() {
         c.name = 'veg' + i;
         c.body.immovable = true;
     }*/
+    
+    wolfSet = [];
+    
+    for(var hue = 0; hue < 5; hue++)
+    {
+    sheepSet.push(new indSheep(game, sprite));
+    }
     
     sheepSet = [];
 
