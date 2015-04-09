@@ -129,31 +129,34 @@ function update() {
     sprite.body.velocity.y = 0;
     
     //moveSheep(c);
+    var rotSum = 0;
     
     if (cursors.left.isDown)
     {
-        sprite.body.rotation = 180;
+        rotSum += 180;
         game.physics.arcade.velocityFromRotation(sprite.rotation, 200, sprite.body.velocity);
     }
     else if (cursors.right.isDown)
     {
         //sprite.body.velocity.x = 200;
-        sprite.body.rotation = 0;
+        sprite.body.rotation += 360;
         game.physics.arcade.velocityFromRotation(sprite.rotation, 200, sprite.body.velocity);
     }
 
     if (cursors.up.isDown)
     {
         //sprite.body.velocity.y = -200;
-        sprite.body.rotation = 270;
+        rotSum += 270;
         game.physics.arcade.velocityFromRotation(sprite.rotation, 200, sprite.body.velocity);
     }
     else if (cursors.down.isDown)
     {
         //sprite.body.velocity.y = 200;
-        sprite.body.rotation = 90;
+        rotSum += 90;
         game.physics.arcade.velocityFromRotation(sprite.rotation, 200, sprite.body.velocity);
     }
+    
+    sprite.body.rotation = rotSum;
     
     if (game.time.now > turnTimer && game.time.now > 500)
     {
