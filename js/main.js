@@ -101,9 +101,9 @@ function preload() {
     game.load.audio('sheepSong', 'assets/audio/sheeptheme.mp3');
     game.load.image('bullet', 'assets/sprites/rock.png');
     game.load.image('fence', 'assets/sprites/fence.png');
-    game.load.audio('baa', 'assets/audio/sheep.wav');
-    game.load.audio('bark', 'assets/audio/wolf.wav');
-    game.load.audio('ding', 'assets/audio/ding.wav');
+    //game.load.audio('baa', 'assets/audio/sheep.wav');
+    //game.load.audio('bark', 'assets/audio/wolf.wav');
+    //game.load.audio('ding', 'assets/audio/ding.wav');
 
 }
 
@@ -138,9 +138,9 @@ function create() {
 
     music.play();
     
-    baa = game.add.audio('baa');
-    ding = game.add.audio('ding');
-    bark = game.add.audio('bark');
+    //baa = game.add.audio('baa');
+    //ding = game.add.audio('ding');
+    //bark = game.add.audio('bark');
     
     bullets = game.add.group();
     bullets.enableBody = true;
@@ -329,7 +329,6 @@ function sheepHitsFence (lamb, fence) {
 
         lamb.kill();
         ding.play();
-    }
 
 }
 
@@ -337,7 +336,6 @@ function wolfEatsSheep (lamb, wolf) {
 
         lamb.kill();
         baa.play();
-    }
 
 }
 */
