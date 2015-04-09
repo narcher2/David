@@ -233,7 +233,7 @@ function moveSheep()
 
 function update() {
 
-    game.physics.arcade.collide(sprite, group, collisionHandler, null, this);
+    //game.physics.arcade.collide(sprite, group, collisionHandler, null, this);
 
     sprite.body.velocity.x = 0;
     sprite.body.velocity.y = 0;
