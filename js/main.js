@@ -101,6 +101,9 @@ function preload() {
     game.load.audio('sheepSong', 'assets/audio/sheeptheme.mp3');
     game.load.image('bullet', 'assets/sprites/rock.png');
     game.load.image('fence', 'assets/sprites/fence.png');
+    game.load.audio('baa', 'assets/audio/sheep.wav');
+    game.load.audio('bark', 'assets/audio/wolf.wav');
+    game.load.audio('ding', 'assets/audio/ding.wav');
 
 }
 
@@ -118,6 +121,11 @@ var bullets;
 var fireRate = 300;
 var nextFire = 0;
 
+var baa;
+var ding;
+var bark;
+
+
 function create() {
 
     game.world.setBounds(0, 0, 3000, 3000);
@@ -129,6 +137,10 @@ function create() {
     music = game.add.audio('sheepSong');
 
     music.play();
+    
+    baa = game.add.audio('baa');
+    ding = game.add.audio('ding');
+    bark = game.add.audio('bark');
     
     bullets = game.add.group();
     bullets.enableBody = true;
@@ -300,17 +312,31 @@ function update() {
     {
             wolfSet[i].update();
     }
+        game.physics.arcade.overlap(bullets, wolf, collisionHandler, null, this);
+        game.physics.arcade.overlap(lamb, fence, sheepHitsFence, null, this);
+        game.physics.arcade.overlap(lamb, wolf, wolfEatsSheep, null, this);
+}
+
+function collisionHandler (bullets, wolf) {
+
+        wolf.kill();
+        bullets.kill();
+        bark.play();
 
 }
 
-function collisionHandler (player, veg) {
+function sheepHitsFence (lamb, fence) {
 
-    //  If the player collides with the chillis then they get eaten :)
-    //  The chilli frame ID is 17
+        lamb.kill();
+        ding.play();
+    }
 
-    if (veg.frame === 17)
-    {
-        veg.kill();
+}
+
+function wolfEatsSheep (lamb, wolf) {
+
+        lamb.kill();
+        baa.play();
     }
 
 }
