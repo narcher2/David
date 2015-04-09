@@ -13,6 +13,7 @@ var sprite;
 var group;
 var cursors;
 var q;
+var turnTimer = 0;
 
 function create() {
 
@@ -95,6 +96,11 @@ function update() {
     else if (cursors.down.isDown)
     {
         sprite.body.velocity.y = 200;
+    }
+    
+    if (game.time.now > turnTimer)
+    {
+        turnTimer = game.time.now + 2000;
     }
 
 }
