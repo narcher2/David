@@ -157,6 +157,15 @@ function update() {
     {
         //sprite.body.velocity.y = -200;
         rotSum += 270;
+
+        if (cursors.right.isDown)
+        {
+        rotSum -= 180;
+        }
+        else
+        {
+        rotSum += 0;
+        }
         buttonCount++;
         //game.physics.arcade.velocityFromRotation(sprite.rotation, 200, sprite.body.velocity);
         sprite.body.rotation = rotSum/buttonCount;
