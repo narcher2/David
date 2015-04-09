@@ -19,8 +19,7 @@ indWolf = function (game, player) {
     this.wolf.animations.add('move', [0, 1, 2, 3, 4, 5], 20, false);
 };
 
-/*
-indSheep.prototype.update = function() {
+indWolf.prototype.update = function() {
     if (game.time.now > this.turnTimer && game.time.now > 500)
     {
         this.turnTimer = game.time.now + 3000;
@@ -42,7 +41,7 @@ indSheep.prototype.update = function() {
         this.wolf.rotation = this.game.physics.arcade.moveToObject(this.wolf, this.player, 125)
         this.wolf.play('move');
     }
-};*/
+};
 
 indSheep = function (game, player) {  
     var x = game.world.randomX;
