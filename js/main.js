@@ -5,7 +5,7 @@ indSheep = function (game, player) {
     this.turnTimer = 0;
     this.game = game; 
     this.player = player;
-    /*
+    
     this.sheepStatus = 0;
     this.lamb = game.add.sprite(x, y, 'sheep');
     game.physics.enable(this.lamb, Phaser.Physics.ARCADE);
@@ -15,7 +15,7 @@ indSheep = function (game, player) {
     this.lamb.body.bounce.setTo(1, 1);
     game.physics.arcade.velocityFromRotation(this.lamb.rotation, 50, this.lamb.body.velocity);
     this.animations.add('move', [0, 1, 2, 3, 4, 5], 20, true);
-    this.play('move');*/
+    this.play('move');
 };
 
 /*
