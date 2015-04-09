@@ -56,7 +56,7 @@ function create() {
 
 function moveSheep()
     {   
-        var f;
+        var f = 0;
         f = game.rnd.integerInRange(0,20);
         if (f === 1)
         {
