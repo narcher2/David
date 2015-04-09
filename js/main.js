@@ -29,7 +29,14 @@ function create() {
 
     game.physics.arcade.enable(sprite);
     
-    group = game.add.physicsGroup(Phaser.Physics.ARCADE);
+    //group = game.add.physicsGroup(Phaser.Physics.ARCADE);
+    sheeples = game.add.group();
+    sheeples.enableBody = true;
+    sheeples.physicsBodyType = Phaser.Physics.ARCADE;
+    sheeples.setAll('anchor.x', 0.5);
+    sheeples.setAll('anchor.y', 1);
+    sheeples.setAll('outOfBoundsKill', true);
+    sheeples.setAll('checkWorldBounds', true);
 
     /*for (var i = 0; i < 500; i++)
     {
@@ -41,10 +48,9 @@ function create() {
     for (var i = 0; i < 20; i++)
     {
         //  Here we'll create some chillis which the player can pick-up. They are still part of the same Group.
-        var c = group.create(game.rnd.integerInRange(64, 800-64), game.rnd.integerInRange(0, 2900), 'sheep', 1);
+        var c = sheeples.create(game.rnd.integerInRange(64, 800-64), game.rnd.integerInRange(0, 2900), 'sheep', 1);
         //c.body.immovable = false;
         c.animations.add('move', [0, 1, 2, 3, 4, 5], 20, true);
-        c.anchor.setTo(0.5, 0.5);
         c.play('move');
         c.body.moves = true;
         //c.body.velocity.set(game.rnd.integerInRange(-50, 50), game.rnd.integerInRange(-50, 50));
