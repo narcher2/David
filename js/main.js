@@ -68,7 +68,7 @@ function create() {
 
     game.stage.backgroundColor = '#008000';
 
-    sprite = game.add.sprite(400, 2900, 'player');
+    sprite = game.add.sprite(500, 1000, 'player');
     sprite.anchor.set(0.5);
     //sprite.animations.add('sling', [0, 1, 2, 3, 4, 5, 6, 7, 8], 20, true);
 
