@@ -101,7 +101,7 @@ function update() {
     if (game.time.now > turnTimer)
     {
         turnTimer = game.time.now + 2000;
-        group.body.velocity.set(game.rnd.integerInRange(-50, 50), game.rnd.integerInRange(-50, 50));
+        //group.body.velocity.set(game.rnd.integerInRange(-50, 50), game.rnd.integerInRange(-50, 50));
     }
 
 }
