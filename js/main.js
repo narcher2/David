@@ -115,6 +115,8 @@ var q;
 var turnTimer = 0;
 var sheepSet;
 var wolfSet;
+var score;
+var scoreText;
 
 var rock;
 var bullets;
@@ -212,6 +214,8 @@ function create() {
     fireButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 
     cursors = game.input.keyboard.createCursorKeys();
+    
+    scoreText = game.add.text(32, 550, 'score: 0', { font: "20px Arial", fill: "#ffffff", align: "left" });
 
 }
 
@@ -335,6 +339,10 @@ function sheepHitsFence (lamb, fence) {
 
         fence.kill();
         ding.play();
+        
+    score += 1;
+
+    scoreText.text = 'score: ' + score;
 
 }
 
