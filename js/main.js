@@ -101,7 +101,9 @@ function update() {
     if (game.time.now > turnTimer && game.time.now > 500)
     {
         turnTimer = game.time.now + 2000;
-        c.body.velocity.set(game.rnd.integerInRange(-50, 50), game.rnd.integerInRange(-50, 50));
+        //c.body.velocity.set(game.rnd.integerInRange(-50, 50), game.rnd.integerInRange(-50, 50));
+        c.body.velocity.x = 0;
+        c.body.velocity.y = 0;
     }
 
 }
