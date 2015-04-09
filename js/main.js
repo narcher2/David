@@ -67,17 +67,7 @@ function create() {
 
 function moveSheep()
     {   
-        /*var f = 0;
-        f = game.rnd.integerInRange(0,20);
-        if (f === 1)
-        {*/
-        //c.body.velocity.set(game.rnd.integerInRange(-50, 50), game.rnd.integerInRange(-50, 50));
-        /*}
-        f = game.rnd.integerInRange(0,20);
-        if (f === 1)
-        {*/
-        //c.body.velocity.set(0, 0);
-        //}
+    self.rotation = game.rnd.integerInRange(0, 360);
     }
 
 function update() {
@@ -110,7 +100,7 @@ function update() {
     if (game.time.now > turnTimer && game.time.now > 500)
     {
         turnTimer = game.time.now + 500;
-        sheeples.rotation = game.rnd.integerInRange(0, 360);
+        c.rotation = game.rnd.integerInRange(0, 360);
         //game.physics.arcade.velocityFromRotation(sheeples.rotation, game.rnd.integerInRange(0, 50), sheeples.body.velocity);
         //group.body.velocity.x = 0;
         //group.body.velocity.y = 0;
