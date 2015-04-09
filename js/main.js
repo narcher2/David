@@ -50,6 +50,7 @@ function preload() {
     game.load.image('phaser', 'assets/sprites/phaser-dude.png');
     game.load.spritesheet('veggies', 'assets/sprites/fruitnveg32wh37.png', 32, 32);
     game.load.spritesheet('sheep', 'examples/assets/sprites/sheep.png', 64, 64);
+    game.load.spritesheet('player', 'assets/sprites/david_strip9.png', 64, 64)
 
 }
 
@@ -67,7 +68,7 @@ function create() {
 
     game.stage.backgroundColor = '#008000';
 
-    sprite = game.add.sprite(400, 2900, 'phaser');
+    sprite = game.add.sprite(400, 2900, 'player');
 
     // game.physics.arcade.sortDirection = Phaser.Physics.Arcade.TOP_BOTTOM;
     game.physics.arcade.sortDirection = Phaser.Physics.Arcade.BOTTOM_TOP;
