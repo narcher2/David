@@ -1,4 +1,4 @@
-/*indWolf = function (game, player) {  
+indWolf = function (game, player) {  
     var x = game.world.randomX;
     var y = game.world.randomY;
 
@@ -19,7 +19,7 @@
     this.wolf.animations.add('move', [0, 1, 2, 3, 4, 5], 20, false);
 };
 
-
+/*
 indSheep.prototype.update = function() {
     if (game.time.now > this.turnTimer && game.time.now > 500)
     {
