@@ -63,7 +63,7 @@ var sheepSet;
 
 function create() {
 
-    game.world.setBounds(0, 0, 800, 3000);
+    game.world.setBounds(0, 0, 2000, 2000);
     game.physics.startSystem(Phaser.Physics.ARCADE);
 
     game.stage.backgroundColor = '#008000';
