@@ -100,6 +100,7 @@ function preload() {
     game.load.image('background', 'assets/sprites/grassbackground.png');
     game.load.audio('sheepSong', 'assets/audio/sheeptheme.mp3');
     game.load.image('bullet', 'assets/sprites/rock.png');
+    game.load.image('fence', 'assets/sprites/fence.png');
 
 }
 
@@ -114,7 +115,7 @@ var wolfSet;
 var rock;
 var bullets;
 
-var fireRate = 100;
+var fireRate = 300;
 var nextFire = 0;
 
 function create() {
@@ -137,9 +138,12 @@ function create() {
     bullets.setAll('checkWorldBounds', true);
     bullets.setAll('outOfBoundsKill', true);
 
-    sprite = game.add.sprite(500, 1000, 'player');
+    sprite = game.add.sprite(1500, 1500, 'player');
     sprite.anchor.set(0.5);
     sprite.animations.add('sling', [0, 1, 2, 3, 4, 5, 6, 7, 8], 20, false);
+    
+    fence = game.add.sprite(1500, 1500, 'fence');
+    fence.anchor.set(0.5);
 
     // game.physics.arcade.sortDirection = Phaser.Physics.Arcade.TOP_BOTTOM;
     game.physics.arcade.sortDirection = Phaser.Physics.Arcade.BOTTOM_TOP;
