@@ -139,6 +139,10 @@ function update() {
         //sheeples.rotation = game.rnd.integerInRange(0, 360);
 
     }
+    for (var i = 0; i < sheepSet.length; i++)
+    {
+            sheepSet[i].update();
+    }
 
 }
 
