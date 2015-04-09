@@ -84,7 +84,7 @@ indSheep = function (game, player) {
     this.game = game;  
     this.player = player;
     this.sheepStatus = 0;
-    this.lamb = game.add.sprite(x, y, 'enemy', 'sheep');
+    this.lamb = game.add.sprite(x, y, 'sheep');
     game.physics.enable(this.lamb, Phaser.Physics.ARCADE);
     this.lamb.body.immovable = false;
     this.lamb.angle = game.rnd.angle();
