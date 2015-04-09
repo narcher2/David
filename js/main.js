@@ -61,7 +61,7 @@ function create() {
     game.world.setBounds(0, 0, 800, 3000);
     game.physics.startSystem(Phaser.Physics.ARCADE);
 
-    game.stage.backgroundColor = '#2d2d2d';
+    game.stage.backgroundColor = '#008000';
 
     sprite = game.add.sprite(400, 2900, 'phaser');
 
