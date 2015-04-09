@@ -64,11 +64,11 @@ var sheepSet;
 
 function create() {
 
-    game.world.setBounds(0, 0, 2000, 2000);
+    game.world.setBounds(0, 0, 3000, 3000);
     game.physics.startSystem(Phaser.Physics.ARCADE);
 
     game.stage.backgroundColor = '#008000';
-    background = game.add.tileSprite(0, 0, 2000, 2000, 'background');
+    background = game.add.tileSprite(0, 0, 3000, 3000, 'background');
 
     sprite = game.add.sprite(500, 1000, 'player');
     sprite.anchor.set(0.5);
@@ -162,7 +162,7 @@ function update() {
 
         if (cursors.right.isDown)
         {
-        rotSum -= 90;
+        rotSum += 180;
         }
         else
         {
