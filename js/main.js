@@ -137,6 +137,8 @@ function update() {
         rotSum += 180;
         buttonCount++;
         //game.physics.arcade.velocityFromRotation(sprite.rotation, 200, sprite.body.velocity);
+        sprite.body.rotation = rotSum/buttonCount;
+        game.physics.arcade.velocityFromRotation(sprite.rotation, 200, sprite.body.velocity);
     }
     else if (cursors.right.isDown)
     {
@@ -144,6 +146,8 @@ function update() {
         rotSum += 360;
         buttonCount++;
         //game.physics.arcade.velocityFromRotation(sprite.rotation, 200, sprite.body.velocity);
+        sprite.body.rotation = rotSum/buttonCount;
+        game.physics.arcade.velocityFromRotation(sprite.rotation, 200, sprite.body.velocity);
     }
 
     if (cursors.up.isDown)
@@ -152,6 +156,8 @@ function update() {
         rotSum += 270;
         buttonCount++;
         //game.physics.arcade.velocityFromRotation(sprite.rotation, 200, sprite.body.velocity);
+        sprite.body.rotation = rotSum/buttonCount;
+        game.physics.arcade.velocityFromRotation(sprite.rotation, 200, sprite.body.velocity);
     }
     else if (cursors.down.isDown)
     {
@@ -159,10 +165,9 @@ function update() {
         rotSum += 90;
         buttonCount++;
         //game.physics.arcade.velocityFromRotation(sprite.rotation, 200, sprite.body.velocity);
+        sprite.body.rotation = rotSum/buttonCount;
+        game.physics.arcade.velocityFromRotation(sprite.rotation, 200, sprite.body.velocity);
     }
-    
-    sprite.body.rotation = rotSum/buttonCount;
-    game.physics.arcade.velocityFromRotation(sprite.rotation, 200, sprite.body.velocity);
     
     if (game.time.now > turnTimer && game.time.now > 500)
     {
