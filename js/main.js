@@ -145,13 +145,13 @@ function update() {
     if (cursors.up.isDown)
     {
         //sprite.body.velocity.y = -200;
-        sprite.body.rotation = 90;
+        sprite.body.rotation = 270;
         game.physics.arcade.velocityFromRotation(sprite.rotation, 200, sprite.body.velocity);
     }
     else if (cursors.down.isDown)
     {
         //sprite.body.velocity.y = 200;
-        sprite.body.rotation = 270;
+        sprite.body.rotation = 90;
         game.physics.arcade.velocityFromRotation(sprite.rotation, 200, sprite.body.velocity);
     }
     
