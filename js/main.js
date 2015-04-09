@@ -12,6 +12,7 @@ function preload() {
 var sprite;
 var group;
 var cursors;
+var q;
 
 function create() {
 
@@ -55,14 +56,15 @@ function create() {
 
 function moveSheep()
     {
-       /* if (game.rnd.integerInRange(0,60) === 1)
+        q = game.rnd.integerInRange(0,60);
+        if (q === 1)
         {
         c.body.velocity.set(game.rnd.integerInRange(-50, 50), game.rnd.integerInRange(-50, 50));
         }
         if (game.rnd.integerInRange(0,60) === 1)
         {
         c.body.velocity.set(0, 0);
-        }*/
+        }
     }
 
 function update() {
