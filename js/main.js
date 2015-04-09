@@ -98,10 +98,10 @@ function update() {
         sprite.body.velocity.y = 200;
     }
     
-    if (game.time.now > turnTimer)
+    if (game.time.now > turnTimer && game.time.now > 500)
     {
         turnTimer = game.time.now + 2000;
-        //group.body.velocity.set(game.rnd.integerInRange(-50, 50), game.rnd.integerInRange(-50, 50));
+        c.body.velocity.set(game.rnd.integerInRange(-50, 50), game.rnd.integerInRange(-50, 50));
     }
 
 }
