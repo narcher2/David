@@ -104,6 +104,7 @@ function preload() {
     game.load.audio('baa', 'assets/audio/sheep.wav');
     game.load.audio('bark', 'assets/audio/wolf.wav');
     game.load.audio('ding', 'assets/audio/ding.wav');
+    game.load.audio('throw', 'assets/audio/throw.wav');
 
 }
 
@@ -124,6 +125,7 @@ var nextFire = 0;
 var baa;
 var ding;
 var bark;
+var throw;
 
 
 function create() {
@@ -141,6 +143,7 @@ function create() {
     baa = game.add.audio('baa');
     ding = game.add.audio('ding');
     bark = game.add.audio('bark');
+    throw = game.add.audio('bark');
     
     bullets = game.add.group();
     bullets.enableBody = true;
@@ -156,6 +159,7 @@ function create() {
     
     fence = game.add.sprite(1500, 1500, 'fence');
     fence.anchor.set(0.5);
+    game.physics.arcade.enable(fence);
 
     // game.physics.arcade.sortDirection = Phaser.Physics.Arcade.TOP_BOTTOM;
     game.physics.arcade.sortDirection = Phaser.Physics.Arcade.BOTTOM_TOP;
@@ -216,7 +220,7 @@ function fire() {
     if (game.time.now > nextFire && bullets.countDead() > 0)
     {
         nextFire = game.time.now + fireRate;
-
+        throw.play();
         var bullet = bullets.getFirstDead();
 
         bullet.reset(sprite.x - 8, sprite.y - 8);
@@ -309,7 +313,7 @@ function update() {
         {
             wolfSet[i].update();
             game.physics.arcade.overlap(bullets, wolfSet[i].wolf, collisionHandler, null, this);
-            game.physics.arcade.overlap(wolfSet[i].wolf, sheepSet[i].lamb, wolfEatsSheep, null, this);
+            game.physics.arcade.overlap(wolfSet[i].wolf, sheepSet[j].lamb, wolfEatsSheep, null, this);
         }
     }
         //game.physics.arcade.collide(bullets, wolf, collisionHandler, null, this);
