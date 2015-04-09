@@ -98,7 +98,8 @@ function preload() {
     game.load.spritesheet('player', 'assets/sprites/david_strip9.png', 64, 64)
     game.load.spritesheet('wolf', 'assets/sprites/wolf_strip4.png', 64, 64)
     game.load.image('background', 'assets/sprites/grassbackground.png');
-    game.load.audio('sheepSong', ['assets/audio/sheeptheme.mp3']);
+    game.load.audio('sheepSong', 'assets/audio/sheeptheme.mp3');
+    game.load.image('bullet', 'assets/sprites/rock.png');
 
 }
 
@@ -109,6 +110,12 @@ var q;
 var turnTimer = 0;
 var sheepSet;
 var wolfSet;
+
+var rock;
+var bullets;
+
+var fireRate = 100;
+var nextFire = 0;
 
 function create() {
 
@@ -121,6 +128,14 @@ function create() {
     music = game.add.audio('sheepSong');
 
     music.play();
+    
+    bullets = game.add.group();
+    bullets.enableBody = true;
+    bullets.physicsBodyType = Phaser.Physics.ARCADE;
+
+    bullets.createMultiple(50, 'bullet');
+    bullets.setAll('checkWorldBounds', true);
+    bullets.setAll('outOfBoundsKill', true);
 
     sprite = game.add.sprite(500, 1000, 'player');
     sprite.anchor.set(0.5);
@@ -177,6 +192,21 @@ function create() {
     fireButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 
     cursors = game.input.keyboard.createCursorKeys();
+
+}
+
+function fire() {
+
+    if (game.time.now > nextFire && bullets.countDead() > 0)
+    {
+        nextFire = game.time.now + fireRate;
+
+        var bullet = bullets.getFirstDead();
+
+        bullet.reset(sprite.x - 8, sprite.y - 8);
+
+        game.physics.arcade.moveToPointer(bullet, 300);
+    }
 
 }
 
@@ -243,6 +273,12 @@ function update() {
     }
     if(fireButton.isDown)
     {
+        sprite.play('sling');
+    }
+    
+    if (game.input.activePointer.isDown)
+    {
+        fire();
         sprite.play('sling');
     }
     
