@@ -1,3 +1,49 @@
+indWolf = function (game, player) {  
+    var x = game.world.randomX;
+    var y = game.world.randomY;
+
+    this.turnTimer = 0;
+    this.game = game; 
+    this.player = player;
+    
+    this.sheepStatus = 0;
+    this.wolf = game.add.sprite(x, y, 'wolf');
+    game.physics.enable(this.wolf, Phaser.Physics.ARCADE);
+    this.wolf.body.immovable = false;
+    this.wolf.angle = game.rnd.angle();
+    this.wolf.body.collideWorldBounds = true;
+    this.wolf.body.bounce.setTo(1, 1);
+    this.wolf.anchor.set(0.5);
+    game.physics.arcade.velocityFromRotation(this.wolf.rotation, 50, this.wolf.body.velocity);
+    //this.animations.add('move', [0, 1, 2, 3, 4, 5], 20, true);
+    this.wolf.animations.add('move', [0, 1, 2, 3, 4, 5], 20, false);
+};
+
+
+indSheep.prototype.update = function() {
+    if (game.time.now > this.turnTimer && game.time.now > 500)
+    {
+        this.turnTimer = game.time.now + 3000;
+        if (game.rnd.integerInRange(0, 4) > 3)
+        {
+        this.wolf.angle = game.rnd.integerInRange(0, 360);
+        this.wolf.play('move');
+        game.physics.arcade.velocityFromRotation(this.wolf.rotation, game.rnd.integerInRange(0, 50), this.wolf.body.velocity);
+        }
+        else
+        {
+        this.wolf.body.velocity.x = 0;
+        this.wolf.body.velocity.y = 0;
+        }
+
+    }
+    if (this.game.physics.arcade.distanceBetween(this.wolf, lamb) < 150)
+    {
+        this.wolf.rotation = this.game.physics.arcade.moveToObject(this.wolf, lamb, 125)
+        this.wolf.play('move');
+    }
+};
+
 indSheep = function (game, player) {  
     var x = game.world.randomX;
     var y = game.world.randomY;
@@ -41,6 +87,10 @@ indSheep.prototype.update = function() {
     {
         this.lamb.rotation = this.game.physics.arcade.moveToObject(this.lamb, this.player, -100)+135
     }
+    if (this.game.physics.arcade.distanceBetween(this.lamb, wolf) < 150)
+    {
+        this.lamb.rotation = this.game.physics.arcade.moveToObject(this.lamb, wolf, -100)+135
+    }
 };
 
 var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: preload, create: create, update: update });
@@ -51,6 +101,7 @@ function preload() {
     game.load.spritesheet('veggies', 'assets/sprites/fruitnveg32wh37.png', 32, 32);
     game.load.spritesheet('sheep', 'examples/assets/sprites/sheep.png', 64, 64);
     game.load.spritesheet('player', 'assets/sprites/david_strip9.png', 64, 64)
+    game.load.spritesheet('wolf', 'assets/sprites/wolf_strip4.png', 64, 64)
     game.load.image('background', 'assets/sprites/grassbackground.png');
 
 }
