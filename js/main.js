@@ -43,7 +43,6 @@ function create() {
         //  Here we'll create some chillis which the player can pick-up. They are still part of the same Group.
         var c = group.create(game.rnd.integerInRange(64, 800-64), game.rnd.integerInRange(0, 2900), 'sheep', 1);
         //c.body.immovable = false;
-        //alien.animations.add('fly', [ 0, 1, 2, 3 ], 20, true);
         c.animations.add('move', [0, 1, 2, 3, 4, 5], 20, true);
         c.play('move');
         c.body.moves = true;
@@ -102,8 +101,8 @@ function update() {
     {
         turnTimer = game.time.now + 2000;
         //c.body.velocity.set(game.rnd.integerInRange(-50, 50), game.rnd.integerInRange(-50, 50));
-        c.body.velocity.x = 0;
-        c.body.velocity.y = 0;
+        group.body.velocity.x = 0;
+        group.body.velocity.y = 0;
     }
 
 }
