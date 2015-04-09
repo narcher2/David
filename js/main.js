@@ -104,7 +104,7 @@ function preload() {
     game.load.audio('baa', 'assets/audio/sheep.wav');
     game.load.audio('bark', 'assets/audio/wolf.wav');
     game.load.audio('ding', 'assets/audio/ding.wav');
-    game.load.audio('throw', 'assets/audio/throw.wav');
+    game.load.audio('slinger', 'assets/audio/throw.wav');
 
 }
 
@@ -125,7 +125,7 @@ var nextFire = 0;
 var baa;
 var ding;
 var bark;
-var throw;
+var slinger;
 
 
 function create() {
@@ -143,7 +143,7 @@ function create() {
     baa = game.add.audio('baa');
     ding = game.add.audio('ding');
     bark = game.add.audio('bark');
-    throw = game.add.audio('throw');
+    slinger = game.add.audio('slinger');
     
     bullets = game.add.group();
     bullets.enableBody = true;
@@ -220,7 +220,7 @@ function fire() {
     if (game.time.now > nextFire && bullets.countDead() > 0)
     {
         nextFire = game.time.now + fireRate;
-        //throw.play();
+        //slinger.play();
         var bullet = bullets.getFirstDead();
 
         bullet.reset(sprite.x - 8, sprite.y - 8);
